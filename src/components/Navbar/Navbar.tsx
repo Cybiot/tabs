@@ -7,7 +7,9 @@ export default function Nav() {
     return (
         <>
             <div className={'navigation'}>
-                <NavLink to={'/'}>HOME</NavLink>
+                <NavLink to={'/'} >HOME</NavLink>
+                <NavLink to={'/create'} >NEW TAB</NavLink>
+                {/* <Navlink to={'/community'}>COMMUNITY</Navlink> */}
             </div>
         </>
     )

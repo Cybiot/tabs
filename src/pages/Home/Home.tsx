@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../../router/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
+import "./home.css";
 
 export default function(){
     return(
@@ -7,6 +8,9 @@ export default function(){
         <div className="home">
             <Navbar/>
             <p>Baaanjouuu</p>
+            <div className="tablist">
+                
+            </div>
         </div>
         </>
     )
