@@ -1,7 +1,6 @@
 import React from "react";
-import './community.css';
 
-export default function Community(){
+export default function Account(){
     return(
         <>
         

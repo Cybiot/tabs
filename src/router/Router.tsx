@@ -10,6 +10,7 @@ export default function Router() {
             <Routes>
                 <Route path={'/'} element={<Home />} />
                 <Route path={'/create'} element={<Create/>}/>
+                <Route path={'/community'} element={<Create/>}/>
             </Routes>
         </BrowserRouter>
     )

@@ -9,7 +9,8 @@ export default function Nav() {
             <div className={'navigation'}>
                 <NavLink to={'/'} >HOME</NavLink>
                 <NavLink to={'/create'} >NEW TAB</NavLink>
-                {/* <Navlink to={'/community'}>COMMUNITY</Navlink> */}
+                <NavLink to={'/community'}>COMMUNITY</NavLink>
+                <NavLink to={'/account'} className={'account-nav'}></NavLink>
             </div>
         </>
     )
