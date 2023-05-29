@@ -2,6 +2,15 @@ import React from "react";
 import "./tab.css";
 import NoteAttributing from "../Note/Note";
 
+
+const noteButtons = [];
+
+for (let i = 0; i<9; i++){
+    noteButtons.push(<button>{-[i]}</button>);
+}
+
+
+
 export default function Tab(){
     return(
         <>
@@ -22,8 +31,11 @@ export default function Tab(){
                     <p>-------------------------------------------|</p>
                     <p>---0---------------------------------------|</p>
                     <p>---0---------------------------------------|</p>
+
+                    for (i)
                 </div>
                 <NoteAttributing fret={3}></NoteAttributing>
+                {noteButtons}
             </div>
         </>
     )
