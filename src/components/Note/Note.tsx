@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 type NoteType = {
     fret: number
 }
 
-export default function NoteAttributing(props: NoteType){
+const [inputList, setInputList] = useState([])
+
+export default function Note(props: NoteType){
     return (
         <>
-            <h1>{props.fret}</h1>
+            <button onClick={noteClick}>{props.fret}</button>
+
         </>
     )
 }
 
-// export default function(){
-//     return(
-//         <>
-//         <div>
+const Input = () => {
+    return <input placeholder="Input"/>;
+}
 
-//         </div>
-//         </>
-//     )
-// }
+function noteClick(){
+    setInputList(["salut"]);
+}

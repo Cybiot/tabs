@@ -2,3 +2,23 @@
     display: flex;
     flex-direction: row;
 }
+
+.tab-rows{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    background: none;
+    border: none;
+    height: fit-content;
+    width: fit-content;
+}
+
+.tab-rows{
+    margin-left: 2rem;
+}
+
+.tab-rows p button{
+    font-size: 2rem;
+}

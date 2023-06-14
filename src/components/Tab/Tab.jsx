@@ -1,15 +1,29 @@
 import React from "react";
 import "./tab.css";
-import NoteAttributing from "../Note/Note";
+import Note from "../Note/Note";
 
+const rowButtons = [];
+let noteButtons = [];
 
-const noteButtons = [];
+// for (let i = 0; i<6; i++){
+//     for (let j = 0; j<12; j++){
+//         noteButtons.push(<button key={j+','+i} onClick={buttonClick}>-</button>);
+//     }
+//     rowButtons.push(noteButtons)
+//     noteButtons = [];
+// }
 
-for (let i = 0; i<9; i++){
-    noteButtons.push(<button>{-[i]}</button>);
+for (let i = 0; i<6; i++){
+    for (let j = 0; j<24; j++){
+        noteButtons.push(<Note key={j+','+i} fret="-"/>);
+    }
+    rowButtons.push(noteButtons)
+    noteButtons = [];
 }
 
-
+const listItems = rowButtons.map((row, index) =>
+  <p key={index}>{row}</p>
+);
 
 export default function Tab(){
     return(
@@ -23,19 +37,22 @@ export default function Tab(){
                     <p>A |</p>
                     <p>E |</p>
                 </div>
-                <div className="tab-rows">
+                
                     {/* faire un component/page/model qui va créer la structure avec toutes les cases et chaque case sera un <NoteAttributing> */}
-                    <p>-------------------------------------------|</p>
+                    {/* <p>-------------------------------------------|</p>
                     <p>---1---------------------------------------|</p>
                     <p>---2---------------------------------------|</p>
                     <p>-------------------------------------------|</p>
                     <p>---0---------------------------------------|</p>
-                    <p>---0---------------------------------------|</p>
+                    <p>---0---------------------------------------|</p> */}
+                
 
-                    for (i)
+                {/* <Note fret={3}></Note> */}
+
+                <div className="tab-rows">
+                    {listItems}
+                    {/* {rowButtons} */}
                 </div>
-                <NoteAttributing fret={3}></NoteAttributing>
-                {noteButtons}
             </div>
         </>
     )
