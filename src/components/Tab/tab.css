@@ -6,6 +6,11 @@
 .tab-rows{
     display: flex;
     flex-direction: column;
+    margin-left: 2rem;
+}
+
+.tab-rows > p{
+    display: flex;
 }
 
 button{
@@ -13,10 +18,6 @@ button{
     border: none;
     height: fit-content;
     width: fit-content;
-}
-
-.tab-rows{
-    margin-left: 2rem;
 }
 
 .tab-rows p button{
