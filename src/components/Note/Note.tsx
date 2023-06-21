@@ -7,19 +7,22 @@ type NoteType = {
 
 
 export default function Note(props: NoteType){
-    const [inputList, setInputList] = useState([] as string[]);
 
+    const [formVisibility, setFormVisibility] = useState(false);
 
     return (
         <>
-            <button onClick={noteClick}>{props.fret}</button>
-            <p>{inputList}</p>
-            <form action="">{}</form>
+            <button onClick={showForm}>{props.fret}</button>
+            { formVisibility && (<form>
+                <input placeholder="valeur"></input>
+                <button> Valider </button>
+            </form>)}
         </>
     )
 
-    function noteClick(){
-        setInputList(["salut"]);
+
+    function showForm(){
+        setFormVisibility(!formVisibility);
     }
     
 }
