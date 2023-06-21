@@ -9,13 +9,14 @@ type NoteType = {
 export default function Note(props: NoteType){
 
     const [formVisibility, setFormVisibility] = useState(false);
+    const [message, setMessage] = useState('-');
 
     return (
         <>
             <button onClick={showForm}>{props.fret}</button>
-            { formVisibility && (<form>
-                <input placeholder="valeur"></input>
-                <button> Valider </button>
+            { formVisibility && (<form className="noteform">
+                <input placeholder="valeur" onChange={(e =>setMessage(e.target.value))}></input>
+                <button type="submit" className="noteform-button">Valider</button>
             </form>)}
         </>
     )
