@@ -19,6 +19,10 @@
     margin-left: 5rem;
 }
 
-.active:hover{
-    color:blue;
+.active{
+    color: #0bac18;
+}
+
+.navlink:hover{
+    /* color: #0bac18; */
 }

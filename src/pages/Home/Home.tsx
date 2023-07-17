@@ -8,7 +8,6 @@ export default function Home(){
         <>
         <div className="home">
             <Navbar/>
-            <p>Baaanjouuu</p>
             <div className="tab-list">
                 <Tab/>
             </div>

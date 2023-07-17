@@ -1,29 +1,42 @@
 import React, { useState } from "react";
 
 type NoteType = {
-    fret: number
+    fret: string
 }
 
 
 
-export default function Note(props: NoteType){
+export default function Note(){
 
     const [formVisibility, setFormVisibility] = useState(false);
-    const [message, setMessage] = useState('-');
+    const [tempFret, setTempFret] = useState('-');
+    const [fret, setFret] = useState('-');
+
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
+        //props.fret = message;
+    }
 
     return (
         <>
-            <button onClick={showForm}>{props.fret}</button>
-            { formVisibility && (<form className="noteform">
-                <input placeholder="valeur" onChange={(e =>setMessage(e.target.value))}></input>
-                <button type="submit" className="noteform-button">Valider</button>
-            </form>)}
+            <div className="noteDiv">
+                <button onClick={showForm}>{fret}</button>
+                { formVisibility && (<form className="noteform" onSubmit={formSubmit}>
+                    <input placeholder="..." onChange={(e =>setTempFret(e.target.value))}></input>
+                    <button className="noteform-button"></button>
+                </form>)}
+            </div>
         </>
     )
 
-
+    
     function showForm(){
         setFormVisibility(!formVisibility);
+    }
+
+    function formSubmit(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+        showForm();
+        setFret(tempFret);
     }
     
 }
