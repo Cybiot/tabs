@@ -1,25 +1,23 @@
 import React, { useState } from "react";
+import "./note.css";
 
 type NoteType = {
     fret: string
 }
 
 
-
 export default function Note(){
 
     const [formVisibility, setFormVisibility] = useState(false);
-    const [tempFret, setTempFret] = useState('-');
-    const [fret, setFret] = useState('-');
-
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e: React.FormEvent<HTMLFormElement>) => {
-        //props.fret = message;
-    }
+    const [noValue, setNoValue] = useState(true);
+    const [tempFret, setTempFret] = useState('');
+    const [fret, setFret] = useState('');
 
     return (
         <>
             <div className="noteDiv">
-                <button onClick={showForm}>{fret}</button>
+                <button onClick={showForm} className={noValue ? 'noValue' : 'fretValue'}>{noValue && ('')}{ !noValue && ( fret )}</button>
+
                 { formVisibility && (<form className="noteform" onSubmit={formSubmit}>
                     <input placeholder="..." onChange={(e =>setTempFret(e.target.value))}></input>
                     <button className="noteform-button"></button>
@@ -30,6 +28,7 @@ export default function Note(){
 
     
     function showForm(){
+        setTempFret('');
         setFormVisibility(!formVisibility);
     }
 
@@ -37,8 +36,8 @@ export default function Note(){
         event.preventDefault();
         showForm();
         setFret(tempFret);
+        tempFret === '' ? setNoValue(true) : setNoValue(false);
     }
     
 }
-
 
